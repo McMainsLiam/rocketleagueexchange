@@ -5,7 +5,21 @@
     </head>
 
 
+
     <body>
+
         <% include ../partials/nav.ejs %>
+
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+
+        <% posts.forEach( function(post) { %>
+
+            <h6> <%= post.data.title %> </h6>
+
+        <% }); %>
     </body>
 </html>
