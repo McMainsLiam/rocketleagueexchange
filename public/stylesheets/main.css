@@ -25,3 +25,11 @@
     .jumbotron .lang-logo img {
       max-width: 100%; }
 
+.wide {
+    width: 100%;
+}
+
+.halfwide {
+    width: 40%;
+    padding-right: 10px;
+}

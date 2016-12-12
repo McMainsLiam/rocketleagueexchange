@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <% include ../partials/header.ejs %>
-    </head>
+<head>
+    <% include ../partials/header.ejs %>
+</head>
 
 
 
-    <body>
+<body>
 
-        <% include ../partials/nav.ejs %>
+    <% include ../partials/nav.ejs %>
+
+    <div class="container">
 
         <ul class="nav nav-tabs">
             <li role="presentation"><a href="/reddit/xbox">Xbox</a></li>
@@ -17,15 +19,39 @@
             <li role="presentation"><a href="/reddit">All</a></li>
         </ul>
 
-        <div class="container">
+    </div>
+
+    <div class="container">
 
         <% posts.forEach( function(post) { %>
 
-            <h6> <a href = <%= post.data.url %>><%= post.data.title %></a> </h6>
 
-        <% }); %>
+            <div class="col-xs-12 col-s-6 col-md-3">
+                <h5> <a href = <%= post.data.url %>><%= post.data.title %></a> </h6>
+                <h6> <a href = "https://www.reddit.com/u/<%= post.data.author %>"><%= post.data.author %></a> </h6>
 
-        </div> 
+                <a href="https://www.reddit.com/message/compose/?to=<%=post.data.author%>">
+                    <button type="button" class="btn btn-default halfwide">
+                        <span class="glyphicon glyphicon-send"></span> Message
+                    </button>
+                </a>
+
+                <a href="<%=post.data.url%>">
+                    <button type="button" class="btn btn-default halfwide">
+                         <span class="glyphicon glyphicon-comment"></span> Comment
+                    </button>
+                </a>
+            </div>
+
+
+            <% }); %>
+
+            <a href="#">
+                <button type="button" class="btn btn-default wide">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                </button>
+            </a>
+        </div>
 
     </body>
-</html>
+    </html>
