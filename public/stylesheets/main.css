@@ -30,6 +30,11 @@
 }
 
 .halfwide {
-    width: 40%;
+    width: 49%;
     padding-right: 10px;
+}
+
+.smaller {
+    height: 20%;
+    width: 20%;
 }
