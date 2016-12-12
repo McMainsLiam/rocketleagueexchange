@@ -11,14 +11,14 @@
         <% include ../partials/nav.ejs %>
 
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Profile</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
+            <li role="presentation"><a href="/reddit/xbox">Xbox</a></li>
+            <li role="presentation"><a href="/reddit/ps">PS4</a></li>
+            <li role="presentation"><a href="/reddit/pc">PC</a></li>
         </ul>
 
         <% posts.forEach( function(post) { %>
 
-            <h6> <%= post.data.title %> </h6>
+            <h6> <a href = <%= post.data.url %>><%= post.data.title %></a> </h6>
 
         <% }); %>
     </body>
