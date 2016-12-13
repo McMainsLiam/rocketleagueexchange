@@ -15,88 +15,19 @@ app.get('/', function(request, response) {
 });
 
 app.get('/reddit/xbox', function(request, res) {
-
-    //https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new
-    var request = require('request');
-    request('https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new', function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var json = JSON.parse(body);
-
-            var posts = [];
-            json.data.children.forEach(function(post) {
-                if(post.data.title.toLowerCase().includes("[xbox]")) {
-                    console.log("post title is " + post.data.title);
-                    posts.push(post);
-                }
-            });
-
-            res.render('pages/reddit', {posts: posts});
-        }
-    });
-});
-
-app.get('/reddit/ps', function(request, res) {
-
-    //https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new
-    var request = require('request');
-    request('https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new', function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var json = JSON.parse(body);
-
-            var posts = [];
-            json.data.children.forEach(function(post) {
-                if(post.data.title.toLowerCase().includes("[ps4]")) {
-                    console.log("post title is " + post.data.title);
-                    posts.push(post);
-                }
-            });
-
-            res.render('pages/reddit', {posts: posts});
-        }
-    });
+    res.render('pages/reddit');
 });
 
 app.get('/reddit/pc', function(request, res) {
+    res.render('pages/reddit');
+});
 
-    //https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new
-    var request = require('request');
-    request('https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new', function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var json = JSON.parse(body);
-
-            var posts = [];
-            json.data.children.forEach(function(post) {
-                if(post.data.title.toLowerCase().includes("[pc]")) {
-                    console.log("post title is " + post.data.title);
-                    posts.push(post);
-                }
-            });
-
-            res.render('pages/reddit', {posts: posts});
-        }
-    });
+app.get('/reddit/ps', function(request, res) {
+    res.render('pages/reddit');
 });
 
 app.get('/reddit', function(request, res) {
-
-    //https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new
-    var request = require('request');
-    request('https://www.reddit.com/r/rocketleagueexchange/new.json?sort=new', function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var json = JSON.parse(body);
-
-            json.data.children.forEach(function(post) {
-                console.log(post.data.title);
-            });
-
-            //console.log(JSON.stringify(json.data.children));
-
-            res.render('pages/reddit', {posts: json.data.children});
-        }
-    });
-
-
-
+    res.render('pages/reddit');
 });
 
 app.listen(app.get('port'), function() {
