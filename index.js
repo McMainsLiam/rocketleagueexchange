@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/public'));
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(app.router);
 
 app.get('/', function(request, response) {
     response.render('pages/index');
@@ -28,6 +29,10 @@ app.get('/reddit/ps4', function(request, res) {
 
 app.get('/reddit', function(request, res) {
     res.render('pages/reddit');
+});
+
+app.get('*', function(req, res){
+  res.render('pages/notfound');
 });
 
 app.listen(app.get('port'), function() {
