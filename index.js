@@ -22,7 +22,7 @@ app.get('/reddit/pc', function(request, res) {
     res.render('pages/reddit');
 });
 
-app.get('/reddit/ps', function(request, res) {
+app.get('/reddit/ps4', function(request, res) {
     res.render('pages/reddit');
 });
 
