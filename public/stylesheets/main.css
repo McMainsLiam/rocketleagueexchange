@@ -67,6 +67,6 @@
     border-radius: 5px;
 }
 
-body {
+html, body {
     height: 110%;
 }
