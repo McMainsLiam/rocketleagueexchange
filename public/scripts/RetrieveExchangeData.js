@@ -51,13 +51,13 @@ function addDataToDOM(data) {
 
     document.getElementById("loader").remove();
 
-    console.log("Inner html is \"" + document.getElementById('posts').innerHTML + "\"");
     if(document.getElementById('posts').innerHTML == "") {
         document.getElementById('alertText').innerHTML = "No Items Found: Scroll down to load more or search for a different item."
+    } else {
+        document.getElementById('alertText').innerHTML = ""
     }
 
     hasFinishedLoading = true;
-
 
 }
 
