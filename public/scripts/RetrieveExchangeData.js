@@ -52,7 +52,7 @@ function addDataToDOM(data) {
     document.getElementById("loader").remove();
 
     if(document.getElementById('posts').innerHTML == "") {
-        document.getElementById('alertText').innerHTML = "No Items Found: Scroll down to load more or search for a different item."
+        document.getElementById('alertText').innerHTML = "No Items Found: Scroll down to load more results or search for a different item."
     } else {
         document.getElementById('alertText').innerHTML = ""
     }
