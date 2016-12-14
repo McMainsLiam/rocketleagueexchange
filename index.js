@@ -14,19 +14,23 @@ app.get('/', function(request, response) {
     response.render('pages/index');
 });
 
-app.get('/reddit/xbox', function(request, res) {
+// app.get('/reddit/xbox', function(request, res) {
+//     res.render('pages/reddit');
+// });
+//
+// app.get('/reddit/pc', function(request, res) {
+//     res.render('pages/reddit');
+// });
+//
+// app.get('/reddit/ps4', function(request, res) {
+//     res.render('pages/reddit');
+// });
+
+app.get('/reddit', function(req, res) {
     res.render('pages/reddit');
 });
 
-app.get('/reddit/pc', function(request, res) {
-    res.render('pages/reddit');
-});
-
-app.get('/reddit/ps4', function(request, res) {
-    res.render('pages/reddit');
-});
-
-app.get('/reddit', function(request, res) {
+app.get('/reddit/:platform/:search?', function(req, res) {
     res.render('pages/reddit');
 });
 
