@@ -1,0 +1,239 @@
+.jumbotron {
+  background: #532F8C;
+  color: white;
+  padding-bottom: 80px; 
+  background-image: url(../img/windfarm.jpg);
+  background-size: cover;
+}
+
+.jumbotron .btn-primary {
+    background: #845ac7;
+    border-color: #845ac7; 
+    
+}
+.jumbotron .btn-primary:hover {
+      background: #7646c1; 
+}
+
+.jumbotron p {
+    color: #d9ccee;
+    max-width: 75%;
+    margin: 1em auto 2em; 
+}
+
+.navbar {
+    background-color: black;    
+}
+
+#navbarBrand {
+    margin-top: -5px !important;
+    margin-bottom: 35px;
+}
+
+.navbar + .jumbotron {
+    margin-top: -20px; 
+}
+
+.jumbotron .lang-logo {
+    display: block;
+    background: #B01302;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid white; 
+}
+    
+.jumbotron .lang-logo img {
+      max-width: 100%; 
+      
+}
+
+.wide {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.halfwide {
+    width: 49%;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.smaller {
+    max-width: 200px;
+    max-width: 200px;
+}
+
+#centerLogo {
+    margin-bottom: 30px;   
+    max-width: 30%;
+    margin-bottom: 5%;
+    margin-top: 3%
+}
+
+.navbar-brand {
+    padding-top: 20px;
+}
+
+.loader {
+    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db;
+    border-bottom: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*.post {*/
+/*    margin-top: 10px;*/
+/*    background-color: rgb(230, 230, 230);*/
+/*    border-radius: 5px;*/
+/*}*/
+
+html, body {
+    height: 110%;
+    background-color: white;
+}
+
+.navbar-nav li a {
+    line-height: 80px;
+    height: 80px;
+    padding-top: 0;
+}
+
+.transparentInput {
+    
+    color: white !important;
+    height: 50px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0px !important;
+    background-color:rgba(0,0,0,0) !important;
+    border-color: white !important;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+h3 {
+    font-family: 'Permanent Marker';
+    text-align: center;
+    font-size: 40px;
+    margin-top: 3%;
+}
+
+#postsBlock {
+    border-radius: 5px;
+    box-shadow: 0px 0px 50px black;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    min-width: 60%;
+    max-width: 90%;
+    color: black;
+    background-color: white;
+}
+
+.platformTag {
+    position: relative;
+    text-align: center;
+    text-shadow: 0px 0px 5px black;
+    color: white;
+    padding: 1px;
+    width: 25%;
+    background-color: rgb(150,150,150);
+    margin-top: -10px;
+}
+
+.card-block {
+    margin: 20px;
+}
+
+.messageButton {
+    position: relative;
+    left: 60%;
+    width: 40%;
+    margin-bottom: -10px !important;
+}
+
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding-top: 18px;
+  padding-left: 12px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { 
+    left:  0px;
+    
+}
+
+/* add padding  */
+.left-addon input  { 
+    letter-spacing: 1px;
+    padding-left:  30px;
+}
+
+.username {
+    color:rgb(200,200,200);
+}
+
+.btn-secondary {
+    background-color: black;
+    display: block;
+    border-radius: 0px !important;
+    color: white;
+}
+
+h6 {
+    font-size: 15px;
+}
+
+.card {
+    box-shadow: 0px 0px 30px black;
+    background-color: white;
+    margin: 15px;
+    margin-bottom: 25px !important;
+    border-radius: 5px;
+}
+
+.navbar-nav > .active > a {
+     color: black !important;
+}
+
+
+
+
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: white;
+}
+
+.input-group {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+   

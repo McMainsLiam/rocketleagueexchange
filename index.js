@@ -26,6 +26,10 @@ app.get('/', function(request, response) {
 //     res.render('pages/reddit');
 // });
 
+app.get('/beta/:platform/:search?', function(req, res) {
+    res.render('pages/newIndex');
+});
+
 app.get('/reddit', function(req, res) {
     res.render('pages/reddit');
 });

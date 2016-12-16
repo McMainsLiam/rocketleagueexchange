@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/beta.css" />
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <script type="text/javascript" src = "/scripts/DataRetrievalBeta.js"> </script>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    
+    <a href="/" class="logo">
+      <img class = "smaller" id="centerLogo" src="../img/logoWithShadow.png">
+    </a>
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle transparentInput" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Platform <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">All</a></li>
+              <li role="separator" class="divider"></li>
+
+              <li><a href="#">Xbox</a></li>
+              <li><a href="#">PS4</a></li>
+              <li><a href="#">PC</a></li>
+                            
+            </ul>
+          </div><!-- /btn-group -->
+          <div class="inner-addon left-addon">
+              <i class="glyphicon glyphicon-search"></i>
+              <input type="text" class="form-control transparentInput" placeholder="What are people trading today..."/>
+          </div>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div> <!-- row -->
+    
+  </div>
+</div>
+
+<div class="container" id="postsBlock">
+  
+  <h3> Top Posts </h3>
+  
+  <h3 id="alertText"> </h3>
+  <div class="container" id="posts"><div class="loader" id="loader"></div></div>
+  
+  <div class="container">
+      <div class="row" id="postsRow">
+        
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
