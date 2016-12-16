@@ -11,7 +11,7 @@ function removeAllActiveClassesOnTabs() {
 }
 
 function addDataToDOM(data) {
-    
+
     console.log(JSON.stringify(data));
 
     var posts = JSON.parse(data).data.children;
@@ -25,49 +25,61 @@ function addDataToDOM(data) {
         if(!(searchString == "xbox" || searchString == "ps4" || searchString == "pc" || searchString =="all")) {
             if(window.location.href.includes("xbox")) {
                 if(post.data.title.toLowerCase().includes("[xbox]") && post.data.title.toLowerCase().includes(searchString.toLowerCase())) {
-                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> Xbox </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(6) + ' </h4> <p class="card-text"></p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="#" class="btn btn-secondary">Message</a> </div> </div>';
-                    $('#postsBlock').addClass('active');
+                    var str = post.data.title.split("[")[1];
+                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
                 }
             } else if(window.location.href.includes("ps4") && post.data.title.toLowerCase().includes(searchString.toLowerCase())) {
                 if(post.data.title.toLowerCase().includes("[ps4]")) {
-                    document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                    $('#postsBlock').addClass('active');
+                    var str = post.data.title.split("[")[1];
+                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
+
                 }
             } else if(window.location.href.includes("pc") && post.data.title.toLowerCase().includes(searchString.toLowerCase())) {
                 if(post.data.title.toLowerCase().includes("[pc]")) {
-                    document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                    $('#postsBlock').addClass('active');
+                    var str = post.data.title.split("[")[1];
+                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
                 }
             } else if(window.location.href.includes("all") && post.data.title.toLowerCase().includes(searchString.toLowerCase())) {
-                document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                $('#postsBlock').addClass('active');
+                var str = post.data.title.split("[")[1];
+                document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
             }
         }   else {
             if(window.location.href.includes("xbox")) {
                 if(post.data.title.toLowerCase().includes("[xbox]")) {
-                    document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                    $('#postsBlock').addClass('active');
+                    var str = post.data.title.split("[")[1];
+                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
+
                 }
             } else if(window.location.href.includes("ps4")) {
                 if(post.data.title.toLowerCase().includes("[ps4]")) {
-                    document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                    $('#postsBlock').addClass('active');
+                    var str = post.data.title.split("[")[1];
+                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
+
                 }
             } else if(window.location.href.includes("pc")) {
                 if(post.data.title.toLowerCase().includes("[pc]")) {
-                    document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                    $('#postsBlock').addClass('active');
+                    var str = post.data.title.split("[")[1];
+                    document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
+
                 }
             } else if(window.location.href.includes("all")) {
-                document.getElementById('posts').innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3 post"> <h5> <a href = ' +post.data.url + '>' +post.data.title + '</a> </h5> <h6> <a href = "https://www.reddit.com/u/' + post.data.author + '"><i>' +post.data.author + '</i></a> </h6> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author+ '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-send"></span> Message </button> </a> <a href="' + post.data.url + '"> <button type="button" class="btn btn-default halfwide"> <span class="glyphicon glyphicon-comment"></span> Comment </button> </a> </div>';
-                $('#postsBlock').addClass('active');
+                var str = post.data.title.split("[")[1];
+                document.getElementById('postsRow').innerHTML += '<div class="col-sm-5 card"> <div class="platformTag"> <h6> ' + str.trim().substring(0, str.trim().length - 1) + ' </h6> </div> <div class="card-block"> <h4 class="card-title"> ' + post.data.title.substring(str.length+1) + ' </h4> <p class="card-text"> ' + post.data.selftext.substring(0 , 100) + '</p> <p class="username"> <i> ' + post.data.author + ' </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=' + post.data.author + '" class="btn btn-secondary">Message</a> </div> </div>';
+
             }
         }
     });
 
-    document.getElementById("loader").remove();
+    //document.getElementById("loader").remove();
 
-    if(document.getElementById('posts').innerHTML == "") {
+    if(document.getElementById('postsRow').innerHTML == "") {
         document.getElementById('alertText').innerHTML = "No Items Found: Scroll down to load more results or search for a different item."
     } else {
         document.getElementById('alertText').innerHTML = ""
@@ -113,7 +125,7 @@ function handle(e) {
 
 function loadMoreDataAndAddToDOM() {
     if(hasFinishedLoading) {
-        document.getElementById('posts').innerHTML += '<div class="loader" id="loader"></div>';
+        //document.getElementById('posts').innerHTML += '<div class="loader" id="loader"></div>';
         hasFinishedLoading = false;
     }
 
