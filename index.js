@@ -11,31 +11,11 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-    response.render('pages/index');
+    response.redirect('/beta/all')
 });
-
-// app.get('/reddit/xbox', function(request, res) {
-//     res.render('pages/reddit');
-// });
-//
-// app.get('/reddit/pc', function(request, res) {
-//     res.render('pages/reddit');
-// });
-//
-// app.get('/reddit/ps4', function(request, res) {
-//     res.render('pages/reddit');
-// });
 
 app.get('/beta/:platform/:search?', function(req, res) {
     res.render('pages/newIndex');
-});
-
-app.get('/reddit', function(req, res) {
-    res.render('pages/reddit');
-});
-
-app.get('/reddit/:platform/:search?', function(req, res) {
-    res.render('pages/reddit');
 });
 
 app.get('*', function(req, res){
