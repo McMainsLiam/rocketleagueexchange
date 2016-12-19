@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:5000/beta/xbox -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rocket League Exchange</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./Rocket League Exchange_files/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./Rocket League Exchange_files/bootstrap.min.css">
+<script src="./Rocket League Exchange_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Rocket League Exchange_files/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./Rocket League Exchange_files/main.css">
+
+    <link rel="stylesheet" type="text/css" href="./Rocket League Exchange_files/beta.css">
+    <link href="./Rocket League Exchange_files/css" rel="stylesheet">
+    <script type="text/javascript" src="./Rocket League Exchange_files/DataRetrievalBeta.js"> </script>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <div class="container">
+
+            <a href="http://localhost:5000/" class="logo">
+                <img class="smaller" id="centerLogo" src="./Rocket League Exchange_files/logoWithShadow.png">
+            </a>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle transparentInput" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Platform <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://localhost:5000/beta/all">All</a></li>
+                                <li role="separator" class="divider"></li>
+
+                                <li><a href="http://localhost:5000/beta/xbox">Xbox</a></li>
+                                <li><a href="http://localhost:5000/beta/ps4">PS4</a></li>
+                                <li><a href="http://localhost:5000/beta/pc">PC</a></li>
+
+                            </ul>
+                        </div><!-- /btn-group -->
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <input type="text" class="form-control transparentInput" id="txtJob" placeholder="What are people trading today...">
+                        </div>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div> <!-- row -->
+
+        </div>
+    </div>
+
+    <div class="container" id="postsBlock">
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle filter-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-filter"> </span>  Filter
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="http://localhost:5000/beta/xbox#">Top Posts</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:5000/beta/xbox#">New Posts</a>
+          </div>
+        </div>
+
+        <h3> Top Posts </h3>
+
+        <h3 id="alertText"></h3>
+
+        <div class="container">
+            <div class="row" id="postsRow">
+
+            <div class="col-sm-5 card"> <div class="platformTag"> <h6> Xbox </h6> </div> <div class="card-block"> <h4 class="card-title"> [H] Show-off Hexed [W] Offers </h4> <p class="card-text"> </p> <p class="username"> <i> DethZero </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=DethZero" class="btn btn-secondaryMessage">Message</a> </div> </div><div class="col-sm-5 card"> <div class="platformTag"> <h6> Xbox </h6> </div> <div class="card-block"> <h4 class="card-title"> [H] Cert Juggler para [W] offers </h4> <p class="card-text">  Current best is fg loops and slipstream. I will take this unless someone peaks my interest.</p> <p class="username"> <i> DukeTheJuke10 </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=DukeTheJuke10" class="btn btn-secondaryMessage">Message</a> </div> </div><div class="col-sm-5 card"> <div class="platformTag"> <h6> Xbox </h6> </div> <div class="card-block"> <h4 class="card-title"> [H] List [W] Offers </h4> <p class="card-text"> Painted:
+Brodie Helmet - Pink
+Chefs Hat - Forest Green
+Fez - Pink
+Little Bow - Forest Green
+Ivy Cap </p> <p class="username"> <i> BVBean </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=BVBean" class="btn btn-secondaryMessage">Message</a> </div> </div><div class="col-sm-5 card"> <div class="platformTag"> <h6> Xbox </h6> </div> <div class="card-block"> <h4 class="card-title"> [H] Certified Playmaker Takumi RX-T [W] Offers </h4> <p class="card-text"> Gamertag: Bliss The Kid </p> <p class="username"> <i> BlissTheKid </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=BlissTheKid" class="btn btn-secondaryMessage">Message</a> </div> </div><div class="col-sm-5 card"> <div class="platformTag"> <h6> Xbox </h6> </div> <div class="card-block"> <h4 class="card-title"> [H] Black, Crimson, Forest Green, Lime, Pink and Cobalt Sunbursts [W] Offers or cc3s (selling individually, multiple or all together) </h4> <p class="card-text"> </p> <p class="username"> <i> Jordanian_Joe </i> </p> </div> <div class="messageButton"> <a href="https://www.reddit.com/message/compose/?to=Jordanian_Joe" class="btn btn-secondaryMessage">Message</a> </div> </div></div>
+        </div>
+
+        <!-- <div class="container" id="posts"><div class="loader" id="loader"></div></div> -->
+
+
+    </div>
+
+
+
+
+</body></html>

@@ -104,21 +104,22 @@ function refreshPage() {
     window.location.reload();
 }
 
-function handle() {
+function handle(e) {
     console.log("Hanlding!")
+    e.preventDefault();
 
     var searchString = document.getElementById('txtJob').value
 
     if(window.location.href.includes("xbox")) {
-        window.location.href = '/beta/xbox/' + searchString;
+        window.location.href = 'http://rocketleagueexchange.herokuapp.com/reddit/xbox/' + searchString;
     } else if(window.location.href.includes("ps4")) {
-        window.location.href = '/beta/ps4/' + searchString;
+        window.location.href = 'http://rocketleagueexchange.herokuapp.com/reddit/ps4/' + searchString;
     } else if(window.location.href.includes("pc")) {
-        window.location.href = '/beta/pc/' + searchString;
+        window.location.href = 'http://rocketleagueexchange.herokuapp.com/reddit/pc/' + searchString;
     } else if(window.location.href.includes("all")) {
-        window.location.href = '/beta/all/' + searchString;
+        window.location.href = 'http://rocketleagueexchange.herokuapp.com/reddit/all/' + searchString;
     } else {
-        window.location.href = '/beta/all';
+        window.location.href = 'http://rocketleagueexchange.herokuapp.com/reddit/all';
     }
 }
 
@@ -136,10 +137,7 @@ function loadMoreDataAndAddToDOM() {
 
 window.onscroll = function(ev) {
 
-    var offsetHeight = document.getElementById('postsBlock').offsetHeight;
-    offsetHeight += document.getElementById('postsBlock').offsetTop;
-
-    if ((window.innerHeight + window.scrollY) >= offsetHeight && hasFinishedLoading) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && hasFinishedLoading) {
         loadMoreDataAndAddToDOM();
     }
 };
@@ -161,13 +159,10 @@ function convertUnixTimeToDateString(unixTime) {
     return formattedTime;
 }
 
-$(document).ready(function() {
-    console.log("ready");
-    $('#txtJob').keydown(function (event) {
-        console.log("test");
-        var keypressed = event.keyCode || event.which;
-        if (keypressed == 13) {
-            handle();
-        }
-    });
-});
+document.getElementById("textJob").addEventListener("keydown", function(e) {
+    if (!e) { var e = window.event; }
+    e.preventDefault(); // sometimes useful
+
+    // Enter is pressed
+    if (e.keyCode == 13) { handle(); }
+}, false);
