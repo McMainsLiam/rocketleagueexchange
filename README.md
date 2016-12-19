@@ -1,4 +1,4 @@
-![alt text](/public/img/logoWithShadow.png "Logo Title Text 1")
+<img src="/public/img/logoWithShadow.png" width="300">
 
 # Rocket League Exchange
 
